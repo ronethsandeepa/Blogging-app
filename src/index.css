@@ -218,15 +218,21 @@
   }
 
   /* HomePage hero wrapper */
+
+  .hero-wrapper {
+    display: flex;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 8rem;
+    margin-left: -3.5rem;
+  }
+
   .hp-hero {
     position: relative;
     display: Flex;
     flex-direction: column;
-    float: left;
-    font-size: 0.875rem;
-    margin-top: 8rem;
-    margin-left: -3.5rem;
     color: #000;
+    float: left;
   }
 
   @media (min-width: 768px) {
@@ -252,16 +258,15 @@
 
   /* Headline and subtext */
   .hp-headline {
-    font-size: 3rem;
+    font-size: 5rem;
     font-weight: 600;
-    max-width: 50rem;
+    max-width: 60rem;
     margin-top: 1rem;
     line-height: 1.05;
   }
 
   @media (min-width: 768px) {
     .hp-headline {
-      font-size: 3.75rem;
       line-height: 1.2;
     }
   }
@@ -280,4 +285,19 @@
     margin-top: -0.2rem;
     font-size: 1.125rem;
   }
+
+  /* Hero image */
+  .hp-hero-img {
+    display: block;
+    width: 25rem;
+    max-width: 30rem; /* ~max-w-sm */
+    height: auto;
+    transform: rotate(40deg);
+    margin-top: -3.5rem;
+    margin-left: -8rem;
+  }
+
+  @media (min-width: 640px) { .hp-hero-img { max-width: 28rem; } }   /* sm:max-w-md */
+  @media (min-width: 1024px) { .hp-hero-img { max-width: 32rem; } }  /* lg:max-w-lg */
+  @media (min-width: 1536px) { .hp-hero-img { max-width: 36rem; } }  /* 2xl:max-w-xl */
 }
