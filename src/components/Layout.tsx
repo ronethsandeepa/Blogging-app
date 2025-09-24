@@ -1,6 +1,6 @@
 // ...existing code...
 import { Outlet } from "react-router-dom";
-import ReactLogo from "../assets/react.svg";
+import Logo from "../assets/react.svg";
 import type { JSX } from "react/jsx-dev-runtime";
 
 const Layout = (): JSX.Element => {
@@ -10,8 +10,8 @@ const Layout = (): JSX.Element => {
       <nav className="site-nav">
         <div className="site-nav__wrap site-container">
           <a href="/" className="brand">
-            <img src={ReactLogo} alt="Logo" />
-            <span>CodePatch</span>
+            <img src={Logo} alt="Logo" />
+            <span>SyntaxTree</span>
           </a>
 
           <div className="nav-links" id="navbar-default">
@@ -20,16 +20,19 @@ const Layout = (): JSX.Element => {
                 <a href="/" className="nav-link nav-link--active" aria-current="page">Home</a>
               </li>
               <li>
-                <a href="#" className="nav-link">About</a>
+                <a href="#" className="nav-link">About Us</a>
               </li>
               <li>
-                <a href="#" className="nav-link">Services</a>
+                <a href="#" className="nav-link">Write</a>
               </li>
               <li>
-                <a href="#" className="nav-link">Pricing</a>
+                <a href="#" className="nav-link">Membership</a>
               </li>
               <li>
-                <a href="#" className="nav-link">Contact</a>
+                <a href="#" className="nav-link">Sign In</a>
+              </li>
+              <li>
+                <a href="#" className="get-start-btn">Get Started</a>
               </li>
             </ul>
           </div>
@@ -37,8 +40,8 @@ const Layout = (): JSX.Element => {
       </nav>
 
       <main>
-      <Outlet />
-    </main>
+        <Outlet />
+      </main>
 
     </>
   );
