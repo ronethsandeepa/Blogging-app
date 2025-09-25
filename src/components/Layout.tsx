@@ -1,5 +1,5 @@
 // ...existing code...
-import { Outlet } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import Logo from "../assets/react.svg";
 import type { JSX } from "react/jsx-dev-runtime";
 
@@ -29,7 +29,7 @@ const Layout = (): JSX.Element => {
                 <a href="#" className="nav-link">Membership</a>
               </li>
               <li>
-                <a href="#" className="nav-link">Sign In</a>
+                <Link to="/login" className="nav-link">Sign In</Link>
               </li>
               <li>
                 <a href="#" className="get-start-btn">Get Started</a>
