@@ -211,6 +211,23 @@
       font-weight: 600;
     }
 
+    .hp-start-btn {
+      background: #326df7;
+      border: none;
+      width: 8rem;
+      height: 2.8rem;
+      color: #ffffff;
+      border-radius: 0.75rem;
+      margin-top: 1.2rem;
+      font-size: 1rem;
+      transition: transform 0.1s ease-in-out;
+    }
+
+    .hp-start-btn:hover {
+      transform: scale(1.08);
+      font-weight: 600;
+    }
+
     .get-start-btn:hover {
       background: #eff1f4;
       box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);

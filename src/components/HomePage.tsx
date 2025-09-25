@@ -10,6 +10,7 @@ const HomePage = (): JSX.Element => {
                         Turn your <span className="hp-gradient">Experience</span> into <span className="hp-gradient">Impact</span>
                     </h1>
                     <p className="hp-subtext">publish your ideas and knowledge that help others learn - build your reputation</p>
+                    <button className="hp-start-btn">Let's Go →</button>
                 </div>
 
                 <img
