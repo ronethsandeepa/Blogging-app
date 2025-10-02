@@ -22,14 +22,15 @@ export const SignupPage: React.FC = () => {
       const data = await response.json();
 
       if (data.status === "success") {
-        setMessage("✅ Account created successfully!");
+        setMessage("Account created successfully!");
       } else {
-        setMessage("❌ " + data.message);
+        setMessage(data.message);
       }
 
     } catch (error) {
-      console.error("Error:", error);
-      setMessage("⚠️ Something went wrong. Try again later.");
+      setMessage("Something went wrong. Try again later.");
+      console.log(error);
+      
     }
 
   }
