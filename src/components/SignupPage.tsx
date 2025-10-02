@@ -1,20 +1,18 @@
-import { Link } from "react-router-dom";
-
-export const LoginPage = () => {
+export const SignupPage = () => {
   return (
     <div className="login-root">
       <div className="login-image-col">
         <h1 className="hp-headline">
-          Share your <span className="hp-gradient">Knowledge</span> and <span className="hp-gradient">Grow</span> together
+          <span className="hp-gradient">#1</span> Knowkedge Sharing Platform for IT <span className="hp-gradient">Professionals</span>
         </h1>
-        <p className="hp-subtext">From learners to leaders — Write, Publish & Empower the community</p>
+        <p className="hp-subtext">Share your experience - Help others to learn & showcase your skils</p>
       </div>
 
       <div className="login-form-col">
         <form className="login-form">
-          <h2 className="login-title">Sign in</h2>
+          <h2 className="login-title">Sign Up</h2>
           <p className="login-desc">
-            Welcome back! Please sign in to continue
+            Welcome to SyntaxTree! Create your account to continue
           </p>
 
           <button type="button" className="login-google-btn">
@@ -26,7 +24,7 @@ export const LoginPage = () => {
 
           <div className="login-divider-row">
             <div className="login-divider"></div>
-            <p className="login-divider-text">or sign in with username</p>
+            <p className="login-divider-text">or sign up with email</p>
             <div className="login-divider"></div>
           </div>
 
@@ -34,6 +32,18 @@ export const LoginPage = () => {
             <input
               type="text"
               placeholder="Username"
+              className="login-input"
+              required
+            />
+          </div>
+
+          <div className="login-input-row">
+            <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fillRule="evenodd" clipRule="evenodd" d="M0 .55.571 0H15.43l.57.55v9.9l-.571.55H.57L0 10.45zm1.143 1.138V9.9h13.714V1.69l-6.503 4.8h-.697zM13.749 1.1H2.25L8 5.356z" fill="#6B7280" />
+            </svg>
+            <input
+              type="email"
+              placeholder="Email id"
               className="login-input"
               required
             />
@@ -51,27 +61,9 @@ export const LoginPage = () => {
             />
           </div>
 
-          <div className="login-options-row">
-            <div className="login-checkbox-row">
-              <input className="login-checkbox" type="checkbox" id="checkbox" />
-              <label className="text-sm" htmlFor="checkbox">
-                Remember me
-              </label>
-            </div>
-            <a className="login-forgot" href="#">
-              Forgot password?
-            </a>
-          </div>
-
           <button type="submit" className="login-btn">
-            Login
+            Create Account
           </button>
-          <p className="login-bottom-text">
-            Don’t have an account?{" "}
-            <Link className="login-signup-link" to="/signup">
-              Sign up
-            </Link>
-          </p>
         </form>
       </div>
     </div>
