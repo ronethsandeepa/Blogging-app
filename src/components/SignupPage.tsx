@@ -1,4 +1,39 @@
-export const SignupPage = () => {
+import { useState } from "react";
+
+export const SignupPage: React.FC = () => {
+
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    try {
+
+      const response = await fetch("http://localhost/syntaxtree/register.php",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username, email, password })
+        });
+
+      const data = await response.json();
+
+      if (data.status === "success") {
+        setMessage("✅ Account created successfully!");
+      } else {
+        setMessage("❌ " + data.message);
+      }
+
+    } catch (error) {
+      console.error("Error:", error);
+      setMessage("⚠️ Something went wrong. Try again later.");
+    }
+
+  }
+
   return (
     <div className="login-root">
       <div className="login-image-col">
@@ -8,7 +43,7 @@ export const SignupPage = () => {
         <p className="hp-subtext">Share your experience - Help others to learn & showcase your skils</p>
       </div>
 
-      <div className="login-form-col">
+      <div className="login-form-col" onSubmit={handleSubmit}>
         <form className="login-form">
           <h2 className="login-title">Sign Up</h2>
           <p className="login-desc">
@@ -33,6 +68,7 @@ export const SignupPage = () => {
               type="text"
               placeholder="Username"
               className="login-input"
+              onChange ={(e) => setUsername(e.target.value)}
               required
             />
           </div>
@@ -45,6 +81,7 @@ export const SignupPage = () => {
               type="email"
               placeholder="Email id"
               className="login-input"
+              onChange ={(e) => setEmail(e.target.value)}
               required
             />
           </div>
@@ -57,15 +94,22 @@ export const SignupPage = () => {
               type="password"
               placeholder="Password"
               className="login-input"
+              onChange ={(e) => setPassword(e.target.value)}
               required
+
             />
           </div>
 
           <button type="submit" className="login-btn">
             Create Account
           </button>
+
+          {message && <p style={{ marginTop: "10px" }}>{message}</p>}
+
         </form>
       </div>
     </div>
   );
-};
+}
+
+export default SignupPage
